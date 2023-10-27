@@ -1,0 +1,25 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: microservice-student
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://bbjzkjbef9hfl2boz0ez-mysql.services.clever-cloud.com:3306/bbjzkjbef9hfl2boz0ez?useSSL=false
+    username: ubtepvd0tgvlcdid
+    password: N3MV2OVvcP3UxZQQUlER
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+  config:
+    import: optional:configserver:http://localhost:8888
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
