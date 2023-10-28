@@ -41,6 +41,11 @@ public class JpaCourseRepositoryAdapter implements CourseRepositoryPort {
 
     @Override
     public Optional<Course> findById(Long id) {
+        if (id == null || id.equals(0L)) {
+            // handle validation for null or empty id
+            return Optional.empty();
+        }
+
         return coursePersistence.findById(id);
     }
 

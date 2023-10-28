@@ -44,7 +44,7 @@ public class CourseService implements CreateCourseUseCase, RetrieveCourseUseCase
 
     @Override
     public Optional<Course> findById(Long id) {
-        return retrieveCourseUseCase.findById(id);
+        return Optional.of(retrieveCourseUseCase.findById(id).orElse(new Course()));
     }
 
     @Override

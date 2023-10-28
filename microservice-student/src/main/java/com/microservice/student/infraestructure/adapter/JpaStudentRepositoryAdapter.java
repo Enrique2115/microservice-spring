@@ -35,6 +35,6 @@ public class JpaStudentRepositoryAdapter implements StudentRepositoryPort {
 
     @Override
     public List<Student> findByIdCourse(Long idCourse) {
-        return null;
+        return studentPersistance.findAllByCourseId(idCourse);
     }
 }
